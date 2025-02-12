@@ -1,0 +1,20 @@
+1950 No es bisiesto
+1952 Es bisiesto
+1956 Es bisiesto
+1960 Es bisiesto
+1964 Es bisiesto
+1968 Es bisiesto
+1972 Es bisiesto
+1976 Es bisiesto
+1980 Es bisiesto
+1984 Es bisiesto
+1988 Es bisiesto
+1992 Es bisiesto
+1996 Es bisiesto
+2000 Es bisiesto
+2004 Es bisiesto
+2008 Es bisiesto
+2012 Es bisiesto
+2016 Es bisiesto
+2020 Es bisiesto
+2024 Es bisiesto

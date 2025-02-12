@@ -1,0 +1,30 @@
+BoletinFunciones/Ej1.txtBoletinFunciones/Ej1.txtBoletinFunciones/Ej1.txtEj1.txtP
+-2
+NtrueEste es el texto que se añadirá al final del archivo
+Este es el texto que se añadirá al final del archivo
+
+Este es el texto que se añadirá al final del archivo
+
+Este es el texto que se añadirá al final del archivo
+
+Este es el texto que se añadirá al final del archivo
+
+Texto añadido al final
+
+Este es el texto que se añadirá al final del archivo
+
+
+Texto añadido al final
+
+
+Este es el texto que se añadirá al final del archivo
+
+
+Texto añadido al final
+
+
+Este es el texto que se añadirá al final del archivo
+
+
+Texto añadido al final
+
