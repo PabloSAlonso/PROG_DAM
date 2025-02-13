@@ -47,7 +47,7 @@ public class ClasesCadenas {
      * @return El vector con los caracteres
      */
     public static char[] cadenaAVector(String cadena) {//TODO revisar
-        char[] letrasCadena = new char[0];
+        char[] letrasCadena = new char[cadena.length()];
         for (int i = 0; i < letrasCadena.length; i++) {
             letrasCadena[i] = cadena.charAt(i);
         }
@@ -100,7 +100,7 @@ public class ClasesCadenas {
         System.out.println();
         muestraCentrado(frase);
         System.out.println();
-        cadenaAVector(frase);
+        System.out.println("Vector "+ cadenaAVector(frase));
         System.out.println();
         System.out.println(alReves(frase));
         System.out.println();
