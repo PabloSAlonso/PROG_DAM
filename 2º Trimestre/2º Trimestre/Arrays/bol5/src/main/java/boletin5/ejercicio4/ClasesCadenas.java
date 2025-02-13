@@ -24,8 +24,7 @@ public class ClasesCadenas {
         if (posicion < 0 || posicion > cadena.length() || (posicion + caracteres) > cadena.length()) {
             return "";
         } else {
-            for (int i = posicion; i < caracteres + posicion; i++) {//TODO revisar
-                //No estaba teniendo en cuenta la posicion para empezar a pintar caracteres
+            for (int i = posicion; i < caracteres + posicion; i++) {//No estaba teniendo en cuenta la posicion para empezar a pintar caracteres
                 palabra = palabra + cadena.charAt(i);
             }
         }
@@ -47,8 +46,8 @@ public class ClasesCadenas {
      * @param cadena Contiene los caracteres que formarán el vector
      * @return El vector con los caracteres
      */
-    public static char[] cadenaAVector(String cadena) {//TODO revisar
-        char[] letrasCadena = new char[cadena.length()]; //No le habia pasado la cadena al vector
+    public static char[] cadenaAVector(String cadena) {
+        char[] letrasCadena = new char[cadena.length()]; 
         for (int i = 0; i < letrasCadena.length; i++) {
             letrasCadena[i] = cadena.charAt(i);
         }
