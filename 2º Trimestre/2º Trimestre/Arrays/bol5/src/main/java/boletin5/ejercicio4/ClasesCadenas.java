@@ -25,6 +25,7 @@ public class ClasesCadenas {
             return "";
         } else {
             for (int i = posicion; i < caracteres + posicion; i++) {//TODO revisar
+                //No estaba teniendo en cuenta la posicion para empezar a pintar caracteres
                 palabra = palabra + cadena.charAt(i);
             }
         }
@@ -47,7 +48,7 @@ public class ClasesCadenas {
      * @return El vector con los caracteres
      */
     public static char[] cadenaAVector(String cadena) {//TODO revisar
-        char[] letrasCadena = new char[cadena.length()];
+        char[] letrasCadena = new char[cadena.length()]; //No le habia pasado la cadena al vector
         for (int i = 0; i < letrasCadena.length; i++) {
             letrasCadena[i] = cadena.charAt(i);
         }
@@ -90,20 +91,27 @@ public class ClasesCadenas {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String frase = "Hola que tal estas";//sc.nextLine();
+        String frase = "Hola que tal estas";
         System.out.println();
+        //Muestra la frase
         System.out.println(frase);
         System.out.println();
+        //Enseña la frase hacia abajo
         muestraEnLinea(frase);
         System.out.println();
+        //Enseña un fragmento de la cadena según los parametros
         System.out.println("subcadena: "+ subCadena(frase, 5, 6));
         System.out.println();
+        //Enseña centrado en la consola
         muestraCentrado(frase);
         System.out.println();
-        System.out.println("Vector "+ cadenaAVector(frase));
+        //Pasa la cadena a un vector
+        cadenaAVector(frase);
         System.out.println();
+        //Muestra la cadena al reves
         System.out.println(alReves(frase));
         System.out.println();
+        //Pasa a Mayuscula a partir del codigo ASCII y cambia las "_" por espacios
         System.out.println(pasoAMayusculas(frase));
     }
 }
