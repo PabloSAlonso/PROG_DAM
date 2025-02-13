@@ -24,7 +24,7 @@ public class ClasesCadenas {
         if (posicion < 0 || posicion > cadena.length() || (posicion + caracteres) > cadena.length()) {
             return "";
         } else {
-            for (int i = posicion; i < caracteres; i++) {
+            for (int i = posicion; i < caracteres + posicion; i++) {//TODO revisar
                 palabra = palabra + cadena.charAt(i);
             }
         }
@@ -46,7 +46,7 @@ public class ClasesCadenas {
      * @param cadena Contiene los caracteres que formarán el vector
      * @return El vector con los caracteres
      */
-    public static char[] cadenaAVector(String cadena) {
+    public static char[] cadenaAVector(String cadena) {//TODO revisar
         char[] letrasCadena = new char[0];
         for (int i = 0; i < letrasCadena.length; i++) {
             letrasCadena[i] = cadena.charAt(i);
@@ -90,13 +90,13 @@ public class ClasesCadenas {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String frase = sc.nextLine();
+        String frase = "Hola que tal estas";//sc.nextLine();
         System.out.println();
         System.out.println(frase);
         System.out.println();
         muestraEnLinea(frase);
         System.out.println();
-        subCadena(frase, 5, 2);
+        System.out.println("subcadena: "+ subCadena(frase, 5, 6));
         System.out.println();
         muestraCentrado(frase);
         System.out.println();

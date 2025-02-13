@@ -3,9 +3,9 @@ public class EjercicioJarJar {
 
     public static void main(String[] args) {
         String fraseEjercicio = "Jar-Jar is the Big Boss";
-        fraseEjercicio.length();
-        fraseEjercicio.charAt(0);
-        fraseEjercicio.charAt(fraseEjercicio.length() - 1);
+        System.out.println(fraseEjercicio.length());
+        System.out.println(fraseEjercicio.charAt(0));
+        System.out.println(fraseEjercicio.charAt(fraseEjercicio.length() - 1));
         // frase.charAt(100); Excede el limite y da error
         fraseEjercicio.toUpperCase();
         String fraseEjercicio2 = fraseEjercicio.toUpperCase();
@@ -19,13 +19,10 @@ public class EjercicioJarJar {
         String fraseEjercicio3 = fraseEjercicio2.substring(7, 15);
         System.out.println(fraseEjercicio3);
         System.out.println(fraseEjercicio3.trim());
-
         String[] frase = fraseEjercicio.split("[ -]");
-
         for (int i = 0; i < frase.length; i++) {
             System.out.printf("%3.3s\n", frase[i]);
         }
-        
     }
 }
 // • Muestra la longitud de la cadena
