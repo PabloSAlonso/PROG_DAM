@@ -1,5 +1,4 @@
 package boletin5.ejercicio4;
-import java.util.Scanner;
 
 public class ClasesCadenas {
     
@@ -89,7 +88,6 @@ public class ClasesCadenas {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         String frase = "Hola que tal estas";
         System.out.println();
         //Muestra la frase
