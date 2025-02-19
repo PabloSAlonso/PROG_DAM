@@ -24,7 +24,7 @@ public class Ventas {
     public void setAño(int año) {
         int añoActual = LocalDate.now().getYear();
         if (año >= añoActual) {
-            año -= 1;
+            año = añoActual-1;
         }
         this.año = año;
     }

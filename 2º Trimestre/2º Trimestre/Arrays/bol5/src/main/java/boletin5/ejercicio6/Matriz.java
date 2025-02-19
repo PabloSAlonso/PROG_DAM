@@ -54,8 +54,7 @@ public class Matriz {
 
     /**
      * Función que suma los elementos de la matriz
-     * 
-     * @return la suma
+     * @return la suma de los elementos
      */
     public int suma() {
         int suma = 0;
@@ -95,7 +94,7 @@ public class Matriz {
      */
     public int suma(int fila) {
         int suma = 0;
-        if (fila >= 0 && fila <= this.bidimensional.length) {
+        if (fila >= 0 && fila < this.bidimensional.length) {
             for (int i = 0; i < this.bidimensional[fila].length; i++) {
                 suma += this.bidimensional[fila][i];
             }

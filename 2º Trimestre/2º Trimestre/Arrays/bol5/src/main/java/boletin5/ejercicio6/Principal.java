@@ -1,13 +1,15 @@
 package boletin5.ejercicio6;
+
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Matriz matriz = new Matriz(5);
+        Matriz matriz = new Matriz(3);
         int opcion;
         int numeroFila;
-        do{
+        // Opciones del menu
+        do {
             System.out.println("1- Muestra la matriz: ");
             System.out.println("2- Muestra la suma de todos los elementos: ");
             System.out.println("3- Muestra la suma de la diagonal");
@@ -16,32 +18,54 @@ public class Principal {
             System.out.println("6- Muestra matriz con una fila borrada");
             System.out.println("7- Salir del programa");
             opcion = sc.nextInt();
+            // Opciones ejecutadas segun haya elegido el usuario
             switch (opcion) {
                 case 1:
-                    
+                //Dejamos fila en blanco y mostramos matriz
+                    System.out.println();
+                    matriz.muestraMatriz(matriz.bidimensional);
                     break;
                 case 2:
-                    System.out.println(matriz.suma());
+                //
+                    System.out.println();
+                    System.out.println("Suma matriz: " + matriz.suma());
+                    System.out.println("------------------------------");
                     break;
                 case 3:
-                    System.out.println(matriz.suma(true));
+                    System.out.println();
+                    System.out.println("Suma diagonal: " + matriz.suma(true));
+                    System.out.println("------------------------------");
                     break;
                 case 4:
-                    System.out.println(matriz.suma(false));
+                    System.out.println();
+                    System.out.println("Suma sin diagonal: " + matriz.suma(false));
+                    System.out.println("------------------------------");
                     break;
                 case 5:
+                    System.out.println();
+                    System.out.println("Escoge una fila: ");
                     numeroFila = sc.nextInt();
-                    System.out.println(matriz.suma(numeroFila));
+                    System.out.println("Suma de la fila: " + matriz.suma(numeroFila - 1));
+                    System.out.println("------------------------------");
                     break;
                 case 6:
-                    
+                    System.out.println();
+                    System.out.println("Escoge una fila a eliminar: ");
+                    numeroFila = sc.nextInt();
+                    System.out.println("Matriz con fila borrada: ");
+                    //Antes de mostrar la nueva matriz la metemos en una variable para mayor claridad
+                    int[][] nueva = matriz.borraFila(numeroFila);
+                    matriz.muestraMatriz(nueva);
+                    System.out.println("------------------------------");
                     break;
                 case 7:
-                    
+                    System.out.println();
+                    System.out.println("Hasta otra!");
+                    System.out.println("------------------------------");
                     break;
-            
+
                 default:
-                System.out.println("Opcion no valida");
+                    System.out.println("Opcion no valida");
             }
         } while (opcion != 7);
         sc.close();
