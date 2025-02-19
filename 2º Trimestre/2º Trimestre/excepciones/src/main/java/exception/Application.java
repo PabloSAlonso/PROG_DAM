@@ -19,6 +19,7 @@ public class Application {
       } catch (Exception e){
       System.out.println(e.getMessage());
       }
+      sc.close();
   }
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);

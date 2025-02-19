@@ -1,7 +1,11 @@
 package boletin5.ejercicio7;
 
-public class Primitiva {
+import java.util.ArrayList;
 
+public class Primitiva {
+    public static void rellenaCol(ArrayList<Integer> coleccion){
+        
+    }
     
     public static void main(String[] args) {
         

@@ -3,6 +3,7 @@ package boletin5.ejercicio6;
 import java.util.Scanner;
 
 public class Principal {
+    @SuppressWarnings("static-access")
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Matriz matriz = new Matriz(3);
