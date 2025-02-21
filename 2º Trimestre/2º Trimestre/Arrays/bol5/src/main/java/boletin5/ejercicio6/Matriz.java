@@ -7,7 +7,6 @@ public class Matriz {
     /**
      * Establece la propiedad de filas y columnas a n, inicializa los valores de la
      * matriz a numeros aleatorios entre 0 y 10
-     *
      * @param n dimension n*n de la matriz
      */
     public Matriz(int n) {
@@ -17,7 +16,7 @@ public class Matriz {
         // Asignamos valores aleatorios entre 0 y 10 a cada posición
         for (int i = 0; i < this.bidimensional.length; i++) {
             for (int j = 0; j < this.bidimensional[i].length; j++) {
-                this.bidimensional[i][j] = (int) (Math.random() * 9 + 1);
+                this.bidimensional[i][j] = (int) ((Math.random() * 10));
             }
         }
     }
@@ -26,15 +25,14 @@ public class Matriz {
     // #region Métodos
     /**
      * Funcion que muestra una matriz en forma de tabla
-     *
      * @param matriz la matriz que mostrará
      */
     public static void muestraMatriz(int[][] matriz) {
         // Damos 4 espacios para cuadrar bien el encabezado y posteriormente escribimos
         // este mismo
         System.out.print("    ");
-        for (int i = 0; i < matriz.length; i++) {
-            System.out.printf("%4d", i + 1);
+        for (int i = 0; i < matriz[0].length; i++) { 
+            System.out.printf("%4d", i+1);
         }
         System.out.println();
         // Asignamos la cabecera de filas
@@ -53,7 +51,8 @@ public class Matriz {
     }
 
     /**
-     * Función que suma los elementos de la matriz
+     * Función que suma los elementos de la matriz bidimensional
+     * 
      * @return la suma de los elementos
      */
     public int suma() {
@@ -70,25 +69,27 @@ public class Matriz {
     /**
      * Funcion que devuelve la suma de: o bien la diagonal de la matriz o bien la
      * suma del resto de elementos dependiendo de un booleano
+     * 
      * @param flag el booleano que determina que opcion ejecutar
      * @return la suma ejecutada
      */
     public int suma(boolean flag) {
         int diagonal = 0;
         int suma = suma();
-            for (int i = 0; i < this.bidimensional.length; i++) {
-                diagonal += this.bidimensional[i][i];
-            }
-            if (flag){
-                return diagonal;
-            } else{
-                return suma - diagonal;
-            }
+        for (int i = 0; i < this.bidimensional.length; i++) {
+            diagonal += this.bidimensional[i][i];
+        }
+        if (flag) {
+            return diagonal;
+        } else {
+            return suma - diagonal;
+        }
     }
 
     /**
      * Funcion que suma los elementos de una fila, en caso de no existir la fila
      * devuelve -1
+     * 
      * @param fila la fila que quieres sumar
      * @return la suma de la fila o -1 si no existe la fila
      */
@@ -103,26 +104,25 @@ public class Matriz {
             return -1;
         }
     }
+
     /**
      * funcion que crea una matriz a partir de otra a la que se le elimina una fila
      * @param filaBorrada la fila borrada de la matriz original
      * @return la nueva matriz con la fila borrada
      */
-    public int[][] borraFila(int filaBorrada) {
-        int[][] nuevaMatriz = new int[this.bidimensional.length - 1][this.bidimensional.length];
+    public int[][] borraFila(int[][]mtriz,int filaBorrada) {
+        int[][] nuevaMatriz = new int[bidimensional.length - 1][bidimensional[0].length];
         int k = 0;
-        if (filaBorrada < 0 || filaBorrada > this.bidimensional.length) {
-            return this.bidimensional;
+        if (filaBorrada < 0 || filaBorrada >= bidimensional.length) {
+            return bidimensional;
         } else {
-            for (int i = 0; i < this.bidimensional.length; i++) {
-                if (i == filaBorrada - 1) {
-
-                } else {
-                    for (int j = 0; j < this.bidimensional[i].length; j++) {
-                        nuevaMatriz[k][j] = this.bidimensional[i][j];
+            for (int i = 0; i < bidimensional.length; i++) {
+                if (i != filaBorrada - 1) {
+                    for (int j = 0; j < bidimensional[i].length; j++) {
+                        nuevaMatriz[k][j] = bidimensional[i][j];
                     }
                     k++;
-                }
+                } 
             }
             return nuevaMatriz;
         }
