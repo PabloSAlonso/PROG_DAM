@@ -2,10 +2,9 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Bol3_Ejer13 { // TODO dados enteros, no repetir numeros (usuario), (Hecho)
+public class Bol3_Ejer13 {
     /**
      * Genera un número del 1 al numero de caras indicado por el usuario
-     * 
      * @param numeroCarasDado Numero de caras del dado
      * @return un numero aleatorio entre 1 y el numero máximo de caras
      */

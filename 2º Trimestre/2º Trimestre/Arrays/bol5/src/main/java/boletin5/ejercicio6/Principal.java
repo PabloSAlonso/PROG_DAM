@@ -16,7 +16,7 @@ public class Principal {
             System.out.println("3- Muestra la suma de la diagonal");
             System.out.println("4- Muestra suma de elementos menos la diagonal");
             System.out.println("5- Muestra suma de elementos de fila a eleccion");
-            System.out.println("6- Muestra matriz con una fila borrada");//TODO revisar mostrar cab col
+            System.out.println("6- Muestra matriz con una fila borrada");
             System.out.println("7- Salir del programa");
             opcion = sc.nextInt();
             // Opciones ejecutadas segun haya elegido el usuario
