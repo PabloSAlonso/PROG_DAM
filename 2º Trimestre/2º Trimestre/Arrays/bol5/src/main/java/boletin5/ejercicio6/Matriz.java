@@ -96,8 +96,8 @@ public class Matriz {
     public int suma(int fila) {
         int suma = 0;
         if (fila >= 0 && fila < this.bidimensional.length) {
-            for (int i = 0; i < this.bidimensional[fila].length; i++) {
-                suma += this.bidimensional[fila][i];
+            for (int j = 0; j < this.bidimensional[fila].length; j++) {
+                suma += this.bidimensional[fila][j];
             }
             return suma;
         } else {

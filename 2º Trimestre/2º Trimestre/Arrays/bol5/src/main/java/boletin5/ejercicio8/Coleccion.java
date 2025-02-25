@@ -6,6 +6,10 @@ import java.util.Scanner;
 public class Coleccion {
     private ArrayList<Videojuego>videojuegos;
 
+    public void insertarVideojuego(){
+        
+    }
+
     public void menu(){
         Scanner sc = new Scanner(System.in);
         int opcion;
