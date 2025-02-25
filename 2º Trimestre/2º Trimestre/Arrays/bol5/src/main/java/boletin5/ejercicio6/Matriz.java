@@ -110,7 +110,7 @@ public class Matriz {
      * @param filaBorrada la fila borrada de la matriz original
      * @return la nueva matriz con la fila borrada
      */
-    public int[][] borraFila(int[][]mtriz,int filaBorrada) {
+    public int[][] borraFila(int[][]matriz,int filaBorrada) {
         int[][] nuevaMatriz = new int[bidimensional.length - 1][bidimensional[0].length];
         int k = 0;
         if (filaBorrada < 0 || filaBorrada >= bidimensional.length) {
