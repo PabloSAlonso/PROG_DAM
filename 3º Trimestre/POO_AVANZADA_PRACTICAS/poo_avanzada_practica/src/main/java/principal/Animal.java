@@ -1,3 +1,4 @@
+package principal;
 public class Animal extends Object{
     public String nombreCientifico;
     private int edad;
