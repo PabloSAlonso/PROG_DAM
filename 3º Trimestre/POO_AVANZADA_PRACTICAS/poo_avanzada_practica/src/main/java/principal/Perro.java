@@ -32,8 +32,23 @@ class Perro extends Animal {
             throw new FiebreException();
         }
     }
-    
-    public double getTemperatura(){
+
+    public double getTemperatura() {
         return temperatura;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (o != null && o.getClass() == Perro.class) {
+            Perro p = (Perro) o;
+            if (this.nombreHumano.equals(p.nombreHumano)
+                    && this.raza.equals(p.raza)
+                    && this.getEdad() == p.getEdad()) {
+                return true;
+            }
+        }
+        return false;
+        
     }
 }
