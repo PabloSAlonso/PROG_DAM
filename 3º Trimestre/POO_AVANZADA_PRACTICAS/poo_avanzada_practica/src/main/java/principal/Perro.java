@@ -1,3 +1,5 @@
+package principal;
+
 class Perro extends Animal {
     public String raza;
     public String nombreHumano;
