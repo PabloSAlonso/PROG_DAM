@@ -1,13 +1,13 @@
 package exception.ejercicio2;
 
 public class Geometria {
-    //#region ATRIBUTOS
+    // #region ATRIBUTOS
     private boolean figura;
     private double altura;
     private double base;
-    //#endregion
+    // #endregion
 
-    //#region GETS
+    // #region GETS
     public boolean getFigura() {
         return figura;
     }
@@ -15,29 +15,30 @@ public class Geometria {
     public double getAltura() {
         return altura;
     }
+
     public double getBase() {
         return base;
     }
 
-    //#endregion
-    
-    //#region SETS
+    // #endregion
+
+    // #region SETS
     public void setAltura(double altura) {
-        if (altura <= 0) {
-            throw new IllegalArgumentException("Valor negativo no es válido");
-        } 
-            this.altura = altura;
-    }
-    
-    public void setBase(double base) {
-        if (base <= 0) {
+        if (altura < 0) {
             throw new IllegalArgumentException("Valor negativo no es válido");
         }
-            this.base = base;
+        this.altura = altura;
     }
-    //#endregion
-    
-    //#region CONSTRUCTORES
+
+    public void setBase(double base) {
+        if (base < 0) {
+            throw new IllegalArgumentException("Valor negativo no es válido");
+        }
+        this.base = base;
+    }
+    // #endregion
+
+    // #region CONSTRUCTORES
     public Geometria() {
         this.figura = false;
         this.altura = 2;
@@ -45,51 +46,51 @@ public class Geometria {
     }
 
     public Geometria(double base, double altura) {
-        this.base = base;
-        this.altura = altura;
+        setBase(base);//TODO set
+        setAltura(altura);;
         this.figura = false;
     }
 
-    public Geometria(boolean figura,
-            double base, double altura) {
+    public Geometria(boolean figura,double base, double altura) {
         this.figura = figura;
-        this.base = base;
-        this.altura = altura;
+        setBase(base);
+        setAltura(altura);;
     }
-    //#endregion
+    // #endregion
 
-    //#region MÉTODOS
+    // #region MÉTODOS
     public double area() {
         double area;
         if (figura) {
             area = base * altura;
-        }
-        else {
+        } else {
             area = base * altura / 2;
         }
         return area;
     }
-    
+
     public double perimetro() {
         double perimetro;
-        if (figura){
+        if (figura) {
             perimetro = 2 * (base + altura);
-        } else{
+        } else {
             perimetro = base + altura + diagonal();
         }
         return perimetro;
     }
-    public double diagonal(){
+
+    public double diagonal() {
         double diagonal;
-        diagonal = Math.sqrt((base*base) + (altura*altura));
+        diagonal = Math.sqrt((base * base) + (altura * altura));
         return diagonal;
     }
-    public String tipo(){
-        if (figura){
+
+    public String tipo() {
+        if (figura) {
             return "Cuadrado";
         } else {
             return "Triángulo";
         }
     }
-    //#endregion
+    // #endregion
 }

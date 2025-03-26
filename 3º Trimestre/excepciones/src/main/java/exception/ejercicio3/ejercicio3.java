@@ -7,7 +7,7 @@ public class ejercicio3 {
     public static void pedirRobusto(String mensaje, int minimo, int maximo) {
         Scanner sc = new Scanner(System.in);
         System.out.println(mensaje);
-        int cantidad = 0;
+        int cantidad;
         if (maximo - minimo < 2 || minimo > maximo) {
             throw new IllegalArgumentException("Parametros incorrectos");
         }
