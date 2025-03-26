@@ -8,19 +8,20 @@ public class Application {
   public static void pedirDato() throws Exception {
     Scanner sc = new Scanner(System.in);
     int numero = 0;
-    try{
+    try {
       System.out.println("Introduce un nº positivo");
-      numero=sc.nextInt();
-      if (numero<0){
-      throw new Exception("No se admiten valor negativo");
+      numero = sc.nextInt();
+      if (numero < 0) {
+        throw new Exception("No se admiten valor negativo");
       }
-      }catch (InputMismatchException e){
+    } catch (InputMismatchException e) {
       System.out.println("Ha introducido un dato que no es un número entero");
-      } catch (Exception e){
+    } catch (Exception e) {
       System.out.println(e.getMessage());
-      }
-      sc.close();
+    }
+    sc.close();
   }
+
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     Fecha fecha = new Fecha();
@@ -34,7 +35,7 @@ public class Application {
       } catch (InputMismatchException e) {
         System.out.println("Debes meter un valor numerico");
         error = true;
-      } catch (IllegalArgumentException e){
+      } catch (IllegalArgumentException e) {
         System.out.println("El mes debe estar entre 1 y 12");
         error = true;
       }
