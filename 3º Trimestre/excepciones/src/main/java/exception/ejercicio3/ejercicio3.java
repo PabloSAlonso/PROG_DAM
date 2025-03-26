@@ -8,7 +8,7 @@ public class ejercicio3 {
         Scanner sc = new Scanner(System.in);
         System.out.println(mensaje);
         int cantidad;
-        if (maximo - minimo < 2 || minimo > maximo || mensaje == "" || mensaje == null) {
+        if (mensaje == null || maximo - minimo < 2 || minimo > maximo || mensaje.equals("")) {
             throw new IllegalArgumentException("Parametros incorrectos");
         } else {
             System.out.println("Introduce un numero entero");
