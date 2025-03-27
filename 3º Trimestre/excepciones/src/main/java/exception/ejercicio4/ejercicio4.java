@@ -6,7 +6,6 @@ public class ejercicio4 {
     /**
      * Funcion que a partir de una cadena devuelve un fragmento de esta misma
      * dependiendo de dos parametros.
-     * 
      * @param cadena     El string del que leerá caracteres
      * @param posicion   La posicion desde la que empezará a leer
      * @param caracteres El número de caracteres que leerá
