@@ -36,6 +36,7 @@ public class Figura implements InterfazUsuario{
     }
     //#endregion
     //#region FUNCIONES
+    @Override
     public void pedirDatos(){
         Scanner sc = new Scanner(System.in);
         double x;
@@ -54,6 +55,7 @@ public class Figura implements InterfazUsuario{
         origen = new Punto(x, y);
         sc.close();
     }
+    @Override
     public void muestraDatos(){
         System.out.println(nombre);
         System.out.println(origen);
