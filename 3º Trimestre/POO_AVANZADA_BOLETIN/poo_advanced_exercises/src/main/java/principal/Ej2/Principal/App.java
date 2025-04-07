@@ -5,6 +5,6 @@ import java.util.ArrayList;
 public class App {
     public static void main(String[] args) {
         //REVISAR
-        ArrayList<Figura> figuras = new ArrayList<>();
+        ArrayList<Integer> figuras = new ArrayList<>();
     }
 }
