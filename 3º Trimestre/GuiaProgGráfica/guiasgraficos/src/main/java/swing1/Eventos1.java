@@ -11,12 +11,15 @@ public class Eventos1 extends JFrame implements ActionListener {
 
     // Constructor
     public Eventos1() {
+
         super("Controlando eventos I");
         this.setLayout(new FlowLayout());
+
         // Botón
         boton1 = new JButton("¡¡Púlsame!!");
         boton1.addActionListener(this);
         this.add(boton1);
+        
         // Etiqueta
         etiqueta1 = new JLabel("Aún no has pulsado el botón");
         this.add(etiqueta1);
