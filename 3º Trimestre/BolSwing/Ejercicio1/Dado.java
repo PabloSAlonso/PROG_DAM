@@ -1,5 +1,5 @@
-import java.swing.*;
+import javax.swing.*;
 
-public class Dado {
+public class Dado extends JFrame {
 
 }
