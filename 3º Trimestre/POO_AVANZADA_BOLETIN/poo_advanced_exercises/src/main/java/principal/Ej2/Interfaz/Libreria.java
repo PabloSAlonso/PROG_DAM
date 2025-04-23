@@ -19,8 +19,6 @@ public class Libreria {
                 isChecked = false;
             }
         } while (!isChecked);
-        System.out.println("Listo, numero guardado correctamente: " + cantidad);
-        sc.close();
         return cantidad;
     }
 
@@ -40,7 +38,6 @@ public class Libreria {
             }
         } while (!isChecked);
         System.out.println("Listo, numero guardado correctamente: " + cantidad);
-        sc.close();
         return cantidad;
     }
 

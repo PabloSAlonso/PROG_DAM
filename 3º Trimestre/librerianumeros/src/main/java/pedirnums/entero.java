@@ -55,7 +55,6 @@ public class entero {
             } while (!isChecked);
             System.out.println("Listo, numero guardado correctamente: " + cantidad);
         }
-        sc.close();
     }
 
     public static void main(String[] args) {

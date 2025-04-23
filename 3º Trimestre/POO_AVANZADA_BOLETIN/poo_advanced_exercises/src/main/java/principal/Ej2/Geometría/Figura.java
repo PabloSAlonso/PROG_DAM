@@ -42,18 +42,18 @@ public class Figura implements InterfazUsuario{
         double x;
         double y;
         try {
+            System.out.println("Introduce el nombre de la figura");
             nombre = sc.nextLine();
         } catch (IllegalArgumentException i){
-            System.out.println("Introduce un nombre váido");
+            System.out.println("Introduce un nombre valido");
         } catch (InputMismatchException m){
-            System.out.println("Introduce un caracter válido");
+            System.out.println("Introduce un caracter valido");
         }
         System.out.println("Introduce la X");
         x = Libreria.pedirReal();
         System.out.println("Introduce la Y");
         y = Libreria.pedirReal();
         origen = new Punto(x, y);
-        sc.close();
     }
     @Override
     public void muestraDatos(){
