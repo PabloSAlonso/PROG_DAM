@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.InputMismatchException;
 
 import javax.swing.*;
 
@@ -31,7 +32,15 @@ public class Dado extends JFrame implements ActionListener {
 
     // Metodos
     public int tirarDado(String limite) {
-        int num = Integer.parseInt(limite);
+        int num = 0;
+        try {
+            num = Integer.parseInt(limite);
+        } catch (IllegalArgumentException e) {
+
+        } catch (InputMismatchException i) {
+
+        }
+
         if (num <= 1) {
             return (int) ((Math.random() * 6) + 1);
         } else {
