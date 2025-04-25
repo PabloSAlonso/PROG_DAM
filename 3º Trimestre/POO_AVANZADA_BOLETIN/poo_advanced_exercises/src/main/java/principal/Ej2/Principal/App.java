@@ -17,7 +17,6 @@ public class App {
             System.out.println("4: Borrar elementos de un tipo");
             System.out.println("5: Salir del programa");
             opcion = Libreria.pedirEntero();
-
             switch (opcion) {
                 case 1:
                     // Código opcion 1
@@ -28,6 +27,10 @@ public class App {
                     System.out.println("3- Cuadrado");
                     System.out.println("4- Circunferencia");
                     añadir = Libreria.pedirEntero();
+                    while (añadir < 1 || añadir > 4) {
+                        System.out.println("Introduce un numero entre 1 y 4 porfavor");
+                        añadir = Libreria.pedirEntero();
+                    }
                     switch (añadir) {
                         case 1:
                             figuras.add(new Linea(punto, punto));
@@ -55,7 +58,7 @@ public class App {
                         for (int i = 0; i < figuras.size(); i++) {
                             System.out.println("Nombre: " + figuras.get(i).getNombre());
                             if (figuras.get(i).getClass() == Circunferencia.class) {
-                                System.out.printf("y radio: %\n", (((Circunferencia) figuras.get(i)).getRadio()));
+                                System.out.printf("y radio: %.1f\n", (((Circunferencia) figuras.get(i)).getRadio()));
                             }
                         }
                     }
@@ -76,11 +79,15 @@ public class App {
                 case 4:
                     // Código opcion 4
                     int eliminar;
+                    System.out.println("Que quieres eliminar?");
                     System.out.println("1.-Linea");
                     System.out.println("2.-Poligono");
                     System.out.println("3.-Circunferencia");
-                    System.out.println("4.-Salir");
                     eliminar = Libreria.pedirEntero();
+                    while (eliminar < 1 || eliminar > 3) {
+                        System.out.println("Introduce un numero entre 1 y 3 porfavor");
+                        eliminar = Libreria.pedirEntero();
+                    }
                     switch (eliminar) {
                         case 1:
                             // Código opcion 1

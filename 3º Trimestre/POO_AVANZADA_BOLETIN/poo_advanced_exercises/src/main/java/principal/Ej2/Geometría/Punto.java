@@ -13,6 +13,6 @@ public class Punto {
     }
     @Override
     public String toString() {
-        return String.format("%f.1; %f.1", x, y);
+        return String.format("%.1f; %.1f", x, y);
     }
 }
