@@ -69,7 +69,7 @@ public class App {
                     int elemento;
                     System.out.println("Que elemento de la coleccion quieres");
                     elemento = Libreria.pedirEntero();
-                    while (elemento < 0 || elemento > figuras.size()) {
+                    while (elemento <= 0 || elemento > figuras.size()) {
                         System.out.println("No existe dicho elemento, elige uno valido");
                         elemento = Libreria.pedirEntero();
                     }

@@ -30,7 +30,7 @@ public class Circunferencia extends Figura {
     public void pedirDatos() {
         super.pedirDatos();
         System.out.println("Cual es el radio de la circunferencia");
-        radio = Libreria.pedirReal();
+        setRadio(radio);
     }
 
     @Override

@@ -1,0 +1,13 @@
+import java.awt.FlowLayout;
+
+import javax.swing.JFrame;
+
+public class Main {
+    public static void main(String[] args) {
+        Titulo titulo = new Titulo();
+        titulo.setSize(500, 500);
+        titulo.setVisible(true);
+        titulo.setLayout(new FlowLayout());
+        titulo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
