@@ -1,9 +1,8 @@
-import java.awt.FlowLayout;
-import java.swing.*;
+package principal.Ejercicio1;
 
+import java.awt.FlowLayout;
 import javax.swing.JFrame;
 
-import org.xml.sax.SAXException;
 public class Principal {
     public static void main(String[] args) {
         Dado dado = new Dado();

@@ -1,5 +1,4 @@
-import java.awt.FlowLayout;
-
+package principal.Ejercicio2;
 import javax.swing.JFrame;
 
 public class Main {

@@ -1,6 +1,8 @@
+package principal.Ejercicio1;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.InputMismatchException;
+
 
 import javax.swing.*;
 
