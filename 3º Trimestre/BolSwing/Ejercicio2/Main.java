@@ -7,7 +7,6 @@ public class Main {
         Titulo titulo = new Titulo();
         titulo.setSize(500, 500);
         titulo.setVisible(true);
-        titulo.setLayout(new FlowLayout());
         titulo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

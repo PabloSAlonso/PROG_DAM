@@ -15,7 +15,7 @@ public class Dado extends JFrame implements ActionListener {
         this.setTitle("Dados");
 
         // propiedades boton
-        boton = new JButton("Tirar dados");
+        boton = new JButton("Tirar dado");
         this.add(boton);
         boton.addActionListener(this);
 
@@ -34,13 +34,10 @@ public class Dado extends JFrame implements ActionListener {
     public int tirarDado(String limite) {
         int num = 0;
         try {
-            num = Integer.parseInt(limite);
-        } catch (IllegalArgumentException e) {
-
-        } catch (InputMismatchException i) {
+            num = Integer.parseInt(limite.trim());
+        } catch (NumberFormatException e) {
 
         }
-
         if (num <= 1) {
             return (int) ((Math.random() * 6) + 1);
         } else {
