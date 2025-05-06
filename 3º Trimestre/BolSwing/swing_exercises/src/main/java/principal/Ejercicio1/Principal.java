@@ -11,6 +11,6 @@ public class Principal {
         dado.setVisible(true);
         dado.setSize(500, 500);
         dado.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        dado.setLayout(new FlowLayout());
+        
     }
 }

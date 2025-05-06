@@ -1,5 +1,6 @@
 package principal.Ejercicio1;
 
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,7 +15,8 @@ public class Dado extends JFrame implements ActionListener {
     public Dado() {
 
         // Propiedades Ventana
-        this.setTitle("Dados");
+        super("Dados");
+        setLayout(new FlowLayout());
 
         // propiedades boton
         boton = new JButton("Tirar dado");
