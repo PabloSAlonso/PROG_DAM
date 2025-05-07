@@ -15,7 +15,6 @@ import javax.swing.JTextField;
 public class Titulo extends JFrame implements ActionListener, ItemListener {
     private JTextField texto;
     private JButton boton;
-    private JOptionPane preguntaConfirmacion;
     private JCheckBox alReves;
     private JCheckBox habilitarCheck;
 
@@ -34,8 +33,8 @@ public class Titulo extends JFrame implements ActionListener, ItemListener {
         this.add(boton);
         boton.addActionListener(this);
 
-        //Mensaje de aceptar cambiar titulo
-        preguntaConfirmacion = new JOptionPane();
+        //Mensaje de aceptar cambiar titulo --> No hace falta acceder asi, es estática
+        //preguntaConfirmacion = new JOptionPane();
 
         //Check para devolver titulo al reves
         alReves = new JCheckBox("Dar la vuelta");
@@ -50,8 +49,7 @@ public class Titulo extends JFrame implements ActionListener, ItemListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (preguntaConfirmacion.showConfirmDialog(this,
-                String.format("¿Quieres poner el título \"%s\"?", texto.getText())) == JOptionPane.OK_OPTION) {
+        if (JOptionPane.showConfirmDialog(this, String.format("¿Quieres poner el título \"%s\"?", texto.getText()),"CONFIRMACION",JOptionPane.YES_NO_OPTION) == JOptionPane.OK_OPTION) {
             this.setTitle(texto.getText());
         }
         if (alReves.isSelected()) {

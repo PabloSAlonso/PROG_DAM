@@ -46,7 +46,7 @@ public class Colores extends JFrame implements ActionListener{
         } else if (e.getSource() == botonAzul){
             this.getContentPane().setBackground(Color.BLUE);
 
-        } else if (e.getSource() == botonAleatorio && (e.getModifiers() & e.SHIFT_MASK) == e.SHIFT_MASK){
+        } else if (e.getSource() == botonAleatorio && (e.getModifiers() & ActionEvent.SHIFT_MASK) == ActionEvent.SHIFT_MASK){
             botonAleatorio.setLocation(((int)(Math.random() * 480) + 1),(int)(Math.random() * 600 + 1));
         }
         else if (e.getSource() == botonAleatorio){
