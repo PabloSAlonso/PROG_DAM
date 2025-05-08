@@ -2,6 +2,8 @@ package principal.Ejercicio4;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
+import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -75,21 +77,77 @@ public class Formulario extends JFrame implements ActionListener {
     public boolean validarDatos(String nombre, String edad, String direccion) {
         String nom = nombre.trim();
         String dir = direccion.trim();
-        int ed = Integer.parseInt(edad);
-        if (nom == "" || dir == "" || ed < 0) {
+        String ed = edad.trim();
+        int edadNum = 0;
+        try {
+            edadNum = Integer.parseInt(ed);
+        } catch (NumberFormatException n) {
+            System.out.println("Introduce numeros");
+        }
+
+        if (nom.isEmpty() || dir.isEmpty() || edadNum < 0 || ed.isEmpty()) {
             return false;
         } else {
             return true;
         }
     }
 
+    public void escribirArchivo(String nombre, String edad, String direccion) throws Exception {
+        FileWriter fw = new FileWriter("archivoFormulario.txt");
+        fw.write(nombre + ";" + edad + ";" + direccion);
+        fw.close();
+    }
+
+    public String[] leerArchivo() throws FileNotFoundException {
+        String cadena = "";
+        try {
+            Scanner sc = new Scanner(new File("ArchivoFormulario.txt"));
+            while (sc.hasNext()) {
+                String cadenaFinal = sc.nextLine();
+                cadena += cadenaFinal.trim();
+            }
+            sc.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("No existe el archivo");
+        }
+        return cadena.split(";");
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (validarDatos(txfNombre.getText(), txfEdad.getText(), txfDir.getText()) == false){
-            JOptionPane.showMessageDialog(this,"DATOS NO VÁLIDOS","ERROR",JOptionPane.ERROR_MESSAGE);;
-        } else {
-            
+        if (e.getSource() == btnGuardar) {
+            if (validarDatos(txfNombre.getText(), txfEdad.getText(), txfDir.getText()) == false) {
+                JOptionPane.showMessageDialog(this, "DATOS NO VÁLIDOS", "ERROR", JOptionPane.ERROR_MESSAGE);
+            } else {
+                try {
+                    escribirArchivo(txfNombre.getText(), txfEdad.getText(), txfDir.getText());
+                } catch (Exception e1) {
+                }
+            }
+        }
 
+        if (e.getSource() == btnCargar) {
+            try {
+                int respuesta = 1;
+                String[] lista = leerArchivo();
+                if (lista.length != 3) {
+                    throw new FileNotFoundException();
+                } else if (txfNombre.getText().trim().equals("") || txfEdad.getText().trim().equals("")
+                        || txfDir.getText().trim().equals("")) {
+                    txfNombre.setText(lista[0]);
+                    txfEdad.setText(lista[1]);
+                    txfDir.setText(lista[2]);
+                } else {
+                    respuesta = JOptionPane.showConfirmDialog(this, "Desea borrar los datos anterior¿?", "ALERTA",
+                            JOptionPane.YES_NO_OPTION);
+                }
+                if (respuesta == JOptionPane.YES_OPTION) {
+                    txfNombre.setText(lista[0]);
+                    txfEdad.setText(lista[1]);
+                    txfDir.setText(lista[2]);
+                }
+            } catch (FileNotFoundException e2) {
+            }
         }
 
     }

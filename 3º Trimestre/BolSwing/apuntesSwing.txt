@@ -1,0 +1,75 @@
+El primero de los interface, MouseListener, obliga a sobreescribir los siguientes
+métodos:
+
+public void mousePressed(MouseEvent e):
+Cuando un botón del ratón es presionado.
+
+public void mouseClicked(MouseEvent e):
+Cuando un botón del ratón es presionado y luego liberado (un click
+completo).
+
+public void mouseReleased(MouseEvent e):
+Cuando un botón del ratón es liberado.
+
+public void mouseEntered(MouseEvent e):
+Cuando el cursor del ratón entra en los límites de un componente.
+
+public void mouseExited(MouseEvent e):
+Cuando el cursor del ratón sale de los límites de un componente.
+
+Y el segundo, el MouseMotionListener, dispone de los siguientes:
+
+public void mouseMoved(MouseEvent e):
+Cuando el ratón se mueve encima del componente.
+
+public void mouseDragged(MouseEvent e):
+Cuando se mueve el ratón encima de un componente a la vez que se
+está presionando un botón.
+
+Además en todos estos eventos el parámetro e de tipo MouseEvent dispone de
+diversos métodos con información sobre el evento. Algunos de ellos son:
+
+e.getX(), e.getY():
+Posición del ratón en el componente. La posición 0,0 es la esquina
+superior izquierda del componente.
+
+e.getButton():
+Devuelve un número entero que indica que botón del ratón cambia de
+estado (no el hecho de estar pulsado). Hay constantes como
+MouseEvent.BUTTON1 que representa al botón izquierdo o
+MouseEvent.BUTTON3 que representa al derecho.
+
+e.isControlDown():
+Booleano que indica si se está pulsando la tecla CTRL a la vez que
+sucede el evento.
+
+e.isAltDown():
+Booleano que indica si se está pulsando la tecla ALT a la vez que
+sucede el evento. Puede no funcionar en algunos sistemas si no es
+en combinación con otra tecla.
+
+e.isShiftDown():
+Booleano que indica si se está pulsando la tecla SHIFT
+(Mayúsculas) a la vez que sucede el evento.
+
+e.getClickCount():
+Número de clicks con los que sucede el evento.
+e.getSource() / getComponent():
+Componente sobre el que se produjo el evento.
+
+
+
+Eventos de teclado: KeyListener
+
+public void keyPressed(KeyEvent e):
+Cuando es pulsada una tecla cualquiera. Obtiene código de tecla
+(KeyCode).
+
+public void keyReleased(KeyEvent e):
+Cuando es liberada una tecla cualquiera. Obtiene código de tecla
+(KeyCode).
+
+public void keyTyped(KeyEvent e):
+Cuando es pulsada una tecla que devuelve un código Unicode
+(KeyChar). Es decir, no se ejecuta con teclas de acción como los
+cursores, teclas de función, etc...
