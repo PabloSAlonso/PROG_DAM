@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class Cadena implements Comparable {
     private ArrayList<Character> cadena;
 
-    //TODO SOLO charAt y Lenght y está mal
+    //TODO SOLO charAt y Length y está mal
     public void setCadena(String caracteres) {
         String caracteresDevueltos = caracteres.trim();
-        for (int i = 0; i < caracteresDevueltos.length(); i++) {
+        for (int i = 0; i < caracteresDevueltos.length() - 1; i++) {
             cadena.add(caracteresDevueltos.charAt(i));
         }
     }
