@@ -4,9 +4,9 @@ import javax.swing.JFrame;
 
 public class Main {
     public static void main(String[] args) {
-        V3 prueba = new V3();
+        V4 prueba = new V4();
         prueba.setSize(500,500);
         prueba.setVisible(true);
-        prueba.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        prueba.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
 }

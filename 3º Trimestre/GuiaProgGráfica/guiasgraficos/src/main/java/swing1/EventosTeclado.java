@@ -28,7 +28,7 @@ public class EventosTeclado extends JFrame implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) { // Código de tecla
         lbl.setText("Tecla Pulsada: " + e.getKeyCode());
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+        if (e.getKeyCode() == KeyEvent.VK_A) {
             lbl2.setLocation(lbl2.getX() - 5, lbl2.getY());
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {

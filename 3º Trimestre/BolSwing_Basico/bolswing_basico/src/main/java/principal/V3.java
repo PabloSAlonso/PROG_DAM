@@ -1,14 +1,13 @@
 package principal;
 
 import java.awt.FlowLayout;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-//TODO sin acabar
 
-public class V3 extends JFrame implements KeyListener {
+public class V3 extends JFrame {
     private JButton btnPulsar;
 
     public V3() {
@@ -18,9 +17,9 @@ public class V3 extends JFrame implements KeyListener {
         // boton que cambia posicion al pulsar
         btnPulsar = new JButton("Pulsame");
         btnPulsar.addMouseListener(new MouseHandler());
+        btnPulsar.addKeyListener(new KeyHandler());
         this.add(btnPulsar);
-        addKeyListener(this);
-        
+
     }
 
     // clase interna
@@ -31,23 +30,14 @@ public class V3 extends JFrame implements KeyListener {
         }
     }
 
-    @Override
-    public void keyTyped(KeyEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'keyTyped'");
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            btnPulsar.setLocation((int) (Math.random() * 600) + 1, (int) (Math.random() * 400) + 1);
+    private class KeyHandler extends KeyAdapter {
+        @Override
+        public void keyPressed(KeyEvent e) {
+            if (e.getKeyCode() == KeyEvent.VK_A) {
+                btnPulsar.setLocation((int) (Math.random() * 600) + 1, (int) (Math.random() * 400) + 1);
+                System.err.println("A pulsada");
+            }
         }
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'keyReleased'");
     }
 
 }
