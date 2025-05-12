@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+
 public class Formulario extends JFrame implements ActionListener {
     private JTextField txfNombre;
     private JLabel etiquetaNombre;
@@ -85,14 +86,14 @@ public class Formulario extends JFrame implements ActionListener {
             System.out.println("Introduce numeros");
         }
 
-        if (nom.isEmpty() || dir.isEmpty() || edadNum < 0 || ed.isEmpty()) {
+        if (nom.isEmpty() || dir.isEmpty() || edadNum <= 0 || ed.isEmpty()) {
             return false;
         } else {
             return true;
         }
     }
 
-    public void escribirArchivo(String nombre, String edad, String direccion) throws Exception {
+    public void escribirArchivo(String nombre, String edad, String direccion) throws IOException {
         FileWriter fw = new FileWriter("archivoFormulario.txt");
         fw.write(nombre + ";" + edad + ";" + direccion);
         fw.close();
@@ -101,7 +102,7 @@ public class Formulario extends JFrame implements ActionListener {
     public String[] leerArchivo() throws FileNotFoundException {
         String cadena = "";
         try {
-            Scanner sc = new Scanner(new File("ArchivoFormulario.txt"));
+            Scanner sc = new Scanner(new File("archivoFormulario.txt"));
             while (sc.hasNext()) {
                 String cadenaFinal = sc.nextLine();
                 cadena += cadenaFinal.trim();
@@ -121,7 +122,7 @@ public class Formulario extends JFrame implements ActionListener {
             } else {
                 try {
                     escribirArchivo(txfNombre.getText(), txfEdad.getText(), txfDir.getText());
-                } catch (Exception e1) {
+                } catch (IOException e1) {
                 }
             }
         }
