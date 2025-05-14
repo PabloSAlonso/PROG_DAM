@@ -4,7 +4,6 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 import javax.swing.*;
 
 public class Dado extends JFrame implements ActionListener {
@@ -24,13 +23,13 @@ public class Dado extends JFrame implements ActionListener {
         boton.addActionListener(this);
 
         // propiedades etiqueta
-        etiqueta = new JLabel();
+        etiqueta = new JLabel("Tira el dado");
         this.add(etiqueta);
 
         // propiedades JTextFieldl
         limite = new JTextField(15);
         this.add(limite);
-        limite.addActionListener(this);
+        // limite.addActionListener(this);
 
     }
 

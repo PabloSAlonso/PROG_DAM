@@ -6,21 +6,22 @@ import java.util.Scanner;
 public class Cadena implements Comparable {
     private ArrayList<Character> cadena;
 
-    //TODO SOLO charAt y Length y está mal
+    // TODO SOLO charAt y Length y está mal
     public void setCadena(String caracteres) {
-        String caracteresDevueltos = caracteres.trim();
-        for (int i = 0; i < caracteresDevueltos.length() - 1; i++) {
-            cadena.add(caracteresDevueltos.charAt(i));
+        if (caracteres.charAt(0) != ' ') {
+            cadena.add(caracteres.charAt(0));
+        }
+        for (int i = 1; i < caracteres.length() - 2; i++) {
+            cadena.add(caracteres.charAt(i));
+        }
+        if (caracteres.charAt(caracteres.length() - 1) != ' ') {
+            cadena.add(caracteres.charAt(caracteres.length() - 1));
         }
     }
 
     @Override
     public String toString() {
-        String cadenaDevuelta = "";
-        for (int i = 0; i < cadena.size(); i++) {
-            cadenaDevuelta += cadena.get(i);
-        }
-        return cadenaDevuelta;
+        return "";
     }
 
     @Override
@@ -43,6 +44,7 @@ public class Cadena implements Comparable {
         }
         return contador;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Cadena cadena = new Cadena();
@@ -55,7 +57,7 @@ public class Cadena implements Comparable {
         comparaCadena.setCadena(cadena.toString());
         System.out.println("Comparación de cadenas:");
         cadena.equals(comparaCadena);
-        
+
     }
 }
 
