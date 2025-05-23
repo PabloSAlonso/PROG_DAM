@@ -1,23 +1,24 @@
 package principal.Ej3;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Cadena implements Comparable {
     private ArrayList<Character> cadena;
 
     public void setCadena(String caracteres) {
+        ArrayList<Character> cadenaTrim = new ArrayList<Character>();
         int inicio = 0;
-        int fin = caracteres.length();
         while (caracteres.charAt(inicio) == ' ') {
             inicio++;
         }
+        int fin = caracteres.length() - 1;
         while (caracteres.charAt(fin) == ' ') {
             fin--;
         }
-        for (int i = inicio; i < fin; i++) {
-            cadena.add(caracteres.charAt(i));
+        for (int i = inicio; i <= fin; i++) {
+            cadenaTrim.add(caracteres.charAt(i));
         }
+        cadena = cadenaTrim;
     }
 
     @Override
@@ -31,9 +32,41 @@ public class Cadena implements Comparable {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj.getClass() == char[].class){
-            char[] arrayDelObj = (char[]) obj;
+        if (obj.getClass() == char[].class) {
+            char[] arrayDeCadena = (char[]) obj;
+            if (arrayDeCadena.length == cadena.size()) {
+                for (int i = 0; i < arrayDeCadena.length; i++) {
+                    if (arrayDeCadena[i] != cadena.get(i)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        } else if (obj.getClass() == Cadena.class) {
+            ArrayList<Character> cadena2 = (ArrayList<Character>) obj;
+            if (cadena2.size() == cadena.size()) {
+                for (int i = 0; i < cadena2.size(); i++) {
+                    if (cadena.get(i) != cadena2.get(i)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return this.equals(obj);
+        } else if (obj.getClass() == String.class) {
+            String cadenaString = (String) obj;
+            if (cadenaString.length() == cadena.size()) {
+                for (int i = 0; i < cadenaString.length(); i++) {
+                    if (cadenaString.charAt(i) != cadena.get(i)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        } else {
+            throw new IllegalArgumentException();
         }
+        return false;
     }
 
     public int eliminar(char caracter) {
@@ -48,17 +81,10 @@ public class Cadena implements Comparable {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         Cadena cadena = new Cadena();
         // System.out.println("Introduce la 1º cadena");
-        cadena.setCadena("hola");
-        String coleccionAString = cadena.toString();
-        System.out.println("Coleccion a String:");
-        System.out.println(coleccionAString);
-        Cadena comparaCadena = new Cadena();
-        comparaCadena.setCadena(cadena.toString());
-        System.out.println("Comparación de cadenas:");
-        cadena.equals(comparaCadena);
+        cadena.setCadena("         h  o  l  a              ");
+        System.out.println(cadena.toString());
 
     }
 }
