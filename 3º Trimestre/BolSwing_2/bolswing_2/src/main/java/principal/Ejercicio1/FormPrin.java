@@ -40,6 +40,4 @@ public class FormPrin extends JFrame {
             FormPrin.this.setTitle("Control de Ratón - X: "+ e.getX()+ " Y:" + e.getY());
         }
     }
-
-
 }
