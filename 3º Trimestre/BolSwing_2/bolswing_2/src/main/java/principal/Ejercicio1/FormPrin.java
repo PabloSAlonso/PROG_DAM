@@ -20,11 +20,13 @@ public class FormPrin extends JFrame {
         boton1 = new JButton("boton 1");
         boton1.setSize(100,50);
         boton1.setLocation(0,0);
+        boton1.addMouseMotionListener(new MouseEvent());
         this.add(boton1);
         
         boton2 = new JButton("boton 2");
         boton2.setSize(100,50);
         boton2.setLocation(105,0);
+        boton2.addMouseMotionListener(new MouseEvent());
         this.add(boton2);
         
         etiqueta1 = new JLabel("Teclas");
