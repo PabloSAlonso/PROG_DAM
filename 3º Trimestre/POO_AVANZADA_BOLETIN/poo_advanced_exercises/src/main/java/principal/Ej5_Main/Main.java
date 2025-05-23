@@ -16,7 +16,7 @@ public class Main {
         String nombreAñadir;
         double radioAñadir;
         int cantidadLunas;
-        Astro nuevaLuna;
+        Astro nuevoAstro;
 
         System.out.println("Bienvenido");
         do {
@@ -33,14 +33,15 @@ public class Main {
             System.out.println("4- Elimina repetidos");
             System.out.println("5- Salir");
             System.out.println();
-            opcion = Libreria.pedirEntero(5);
+            opcion = Libreria.pedirEntero(1, 5);
             switch (opcion) {
                 case 0:
                     System.out.println("Trata de introducir unicamente un numero entre 1 y 5");
+                    break;
                 case 1:
                     System.out.println("Tu planeta es gaeoso?");
                     System.out.println("1 = Si y 2 = No");
-                    gaseoso = Libreria.pedirEntero(2);
+                    gaseoso = Libreria.pedirEntero(1, 2);
                     if (gaseoso == 1) {
                         checkGaseoso = true;
                     } else {
@@ -54,12 +55,12 @@ public class Main {
                     System.out.println("Planeta determinado, ahora dame su cantidad de lunas porfavor: ");
                     cantidadLunas = Libreria.pedirEntero();
                     for (int i = 0; i < cantidadLunas; i++) {
-                        nuevaLuna = new Astro();
+                        nuevoAstro = new Astro();
                         System.out.printf("Dime el nombre de la luna numero %d \n", i + 1);
-                        nuevaLuna.setNombre(Libreria.pedirString(sc.nextLine()));
+                        nuevoAstro.setNombre(Libreria.pedirString(sc.nextLine()));
                         System.out.printf("Dime el radio de la luna numero %d \n", i + 1);
-                        nuevaLuna.setRadio(Libreria.pedirReal());
-                        nuevoPlaneta.satelites.add(nuevaLuna);
+                        nuevoAstro.setRadio(Libreria.pedirReal());
+                        nuevoPlaneta.satelites.add(nuevoAstro);
                         System.out.println("Luna añadida con éxito");
                     }
                     System.out.println("Planeta añadido con exito");
@@ -68,17 +69,24 @@ public class Main {
                     System.err.println(Astros);
                     System.out.println("Lunas:");
                     System.err.println(nuevoPlaneta.satelites);
-                    sc.nextLine();
 
                     break;
                 case 2:
-
+                    System.out.println("Dime el nombre de tu nuevo Astro");
+                    nombreAñadir = Libreria.pedirString(sc.nextLine());
+                    System.out.println("Ahora el radio");
+                    radioAñadir = Libreria.pedirReal();
+                    nuevoAstro = new Astro(nombreAñadir, radioAñadir);
+                    Astros.add(nuevoAstro);
+                    System.out.println("Astro añadido con éxito\n" + Astros);
                     break;
                 case 3:
-
+                    System.out.println("Datos de la colección");
+                    
                     break;
                 case 4:
-
+                    System.out.println("Que elemento quieres eliminar");
+                    
                     break;
 
                 case 5:
@@ -87,8 +95,6 @@ public class Main {
                 default:
                     break;
             }
-
-            opcion = Libreria.pedirEntero();
         } while (opcion != 5);
         sc.close();
     }

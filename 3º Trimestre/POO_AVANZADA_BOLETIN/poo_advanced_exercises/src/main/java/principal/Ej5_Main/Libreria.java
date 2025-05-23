@@ -35,7 +35,7 @@ public class Libreria {
                 isChecked = false;
             }
         } while (!isChecked);
-        while (cantidad < 1 || cantidad > 5) {
+        while (cantidad < 0 || cantidad > 5) {
             System.out.println("Introduce un numero entero");
             try {
                 cantidad = sc.nextInt();
@@ -48,11 +48,11 @@ public class Libreria {
         return cantidad;
     }
 
-    public static int pedirEntero(int limite) {
+    public static int pedirEntero(int minimo, int maximo) {
         Scanner sc = new Scanner(System.in);
         int cantidad = 0;
         boolean isChecked;
-        System.out.println("Introduce un numero entero entre 1 y " + limite);
+        System.out.println("Introduce un numero entero entre " + minimo + " y " + maximo);
         do {
             isChecked = true;
             try {
@@ -63,8 +63,8 @@ public class Libreria {
                 isChecked = false;
             }
         } while (!isChecked);
-        while (cantidad < 1 || cantidad > limite) {
-            System.out.println("Introduce un numero entre 1 y " + limite);
+        while (cantidad < minimo || cantidad > maximo) {
+            System.out.println("Introduce un numero entero entre " + minimo + " y " + maximo);
             try {
                 cantidad = sc.nextInt();
             } catch (InputMismatchException m) {

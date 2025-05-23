@@ -6,31 +6,33 @@ import java.util.Scanner;
 public class Cadena implements Comparable {
     private ArrayList<Character> cadena;
 
-    // TODO SOLO charAt y Length y está mal
     public void setCadena(String caracteres) {
-        if (caracteres.charAt(0) != ' ') {
-            cadena.add(caracteres.charAt(0));
+        int inicio = 0;
+        int fin = caracteres.length();
+        while (caracteres.charAt(inicio) == ' ') {
+            inicio++;
         }
-        for (int i = 1; i < caracteres.length() - 2; i++) {
+        while (caracteres.charAt(fin) == ' ') {
+            fin--;
+        }
+        for (int i = inicio; i < fin; i++) {
             cadena.add(caracteres.charAt(i));
-        }
-        if (caracteres.charAt(caracteres.length() - 1) != ' ') {
-            cadena.add(caracteres.charAt(caracteres.length() - 1));
         }
     }
 
     @Override
     public String toString() {
-        return "";
+        String cadenaCompleta = "";
+        for (int i = 0; i < cadena.size(); i++) {
+            cadenaCompleta += cadena.get(i);
+        }
+        return cadenaCompleta;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (obj.equals(cadena) && obj != null && obj.getClass() == Cadena.class || obj.getClass() == String.class
-                || obj.getClass() == char[].class) {
-            return true;
-        } else {
-            throw new IllegalArgumentException("Parámetro inválido");
+        if(obj.getClass() == char[].class){
+            char[] arrayDelObj = (char[]) obj;
         }
     }
 

@@ -15,7 +15,9 @@ public class Astro {
     public String getNombre(char separador) {
         String nuevoString = "";
         for (int i = 0; i < nombre.length(); i++) {
-            nuevoString += nombre.charAt(i) + separador;
+            if (i != nombre.length() - 1){
+                nuevoString += nombre.charAt(i) + separador;
+            }
         }
         return nuevoString;
     }

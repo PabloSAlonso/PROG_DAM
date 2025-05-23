@@ -14,7 +14,6 @@ public class Bol2_Ejer3 {
             }
             System.out.println(sumatorio);
         }
-           
             
         // else {
         //     System.out.println("");

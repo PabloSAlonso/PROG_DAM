@@ -1,7 +1,5 @@
 package principal.Ej2.Geometría;
 
-import principal.Ej2.Interfaz.Libreria;
-
 public class Circunferencia extends Figura {
     private double radio;
 
