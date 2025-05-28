@@ -53,7 +53,7 @@ public class FormPrin extends JFrame {
     private class MouseEvent extends MouseAdapter {
         @Override
         public void mouseMoved(java.awt.event.MouseEvent e) {
-            FormPrin.this.setTitle("Control de Ratón - X: " + e.getX() + " Y:" + e.getY());
+            FormPrin.this.setTitle(String.format("Posición X:%d Y:%d ", e.getX() + boton1.getX(), e.getY() + boton1.getY()));
         }
 
         @Override
@@ -88,13 +88,20 @@ public class FormPrin extends JFrame {
             }
         }
     }
-
+    // FormSec f2=new FormSec(this); --> Para usar el hide lo iniciamos
+    // fuera y dentro de la accion no volvemos a crear uno nuevo, ya que
+    // lo estamos simplemente 'desocultando'.
     private class KeyEvent extends KeyAdapter {
         @Override
         public void keyPressed(java.awt.event.KeyEvent e) {
             etiqueta1.setText(String.format("Letra: %c y Unicode: %d", e.getKeyChar(), e.getKeyCode()));
             if(e.isControlDown() && e.getKeyCode() == java.awt.event.KeyEvent.VK_C){
                 //TODO meter formulario secundario
+                // f.pack(); setSize que inicia el tamaño necesario para ver todos los componentes
+                FormSec f = new FormSec(FormPrin.this);
+                f.setSize(400,400);
+                f.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+                f.setVisible(true);
             }
         }
 
