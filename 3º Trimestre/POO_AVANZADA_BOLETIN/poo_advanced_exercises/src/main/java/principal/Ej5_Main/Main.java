@@ -82,10 +82,21 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Datos de la colección");
+                    for (int i = 0; i < Astros.size(); i++) {
+                        if (Astros.get(i).getClass() == Astro.class) {
+                            Astros.get(i).toString();
+                        } else {
+                            Astros.get(i);
+                        }
+                    }
                     
                     break;
                 case 4:
-                    System.out.println("Que elemento quieres eliminar");
+                    for (int i = 0; i < Astros.size(); i++) {
+                        // if (Astros.get(i).equals()) {
+                            
+                        // }
+                    }
                     
                     break;
 

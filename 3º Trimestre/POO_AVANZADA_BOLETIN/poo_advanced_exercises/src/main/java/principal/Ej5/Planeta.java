@@ -14,8 +14,9 @@ public class Planeta extends Astro {
     }
 
     public Planeta(String nombre, double radio,boolean gaseoso){
-        setNombre(nombre);
-        setRadio(radio);
+        // setNombre(nombre);
+        // setRadio(radio);
+        super(nombre,radio);
         setGaseoso(gaseoso);
         satelites = new ArrayList<>();
     }

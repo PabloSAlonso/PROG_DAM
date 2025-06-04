@@ -2,7 +2,7 @@ package principal.Ej3;
 
 import java.util.ArrayList;
 
-public class Cadena implements Comparable { //AUN NO HECHO
+public class Cadena { 
     private ArrayList<Character> cadena;
 
     public void setCadena(String caracteres) {
@@ -84,9 +84,14 @@ public class Cadena implements Comparable { //AUN NO HECHO
         Cadena cadena = new Cadena();
         // System.out.println("Introduce la 1º cadena");
         cadena.setCadena("        OOLLOGGOOGOOOG            ");
+        String texto1 = "h";
+        char texto2 = 'h';
+        System.out.println(cadena);
         System.out.println(cadena.toString());
         System.out.println(cadena.eliminar('O'));
         System.out.println(cadena);
+        System.out.println(texto1.equals(texto2));
+
 
     }
 }

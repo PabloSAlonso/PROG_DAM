@@ -9,13 +9,10 @@ public class Libreria {
         String cadenaFinal = "";
         while (cadena == "" || cadena == null) {
             System.out.println("Introduce una cadena válida");
-            sc.nextLine();
             cadena = sc.nextLine().trim();
         }
         for (int i = 0; i < cadena.length(); i++) {
-            if (cadena.charAt(i) != ' ') {
                 cadenaFinal += cadena.charAt(i);
-            }
         }
         return cadenaFinal;
     }
