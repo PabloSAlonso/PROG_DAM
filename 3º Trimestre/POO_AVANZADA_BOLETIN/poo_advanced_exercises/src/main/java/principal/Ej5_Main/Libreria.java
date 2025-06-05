@@ -32,16 +32,16 @@ public class Libreria {
                 isChecked = false;
             }
         } while (!isChecked);
-        while (cantidad < 0 || cantidad > 5) {
-            System.out.println("Introduce un numero entero");
-            try {
-                cantidad = sc.nextInt();
-            } catch (InputMismatchException m) {
-                System.out.println("Caracter no válido");
-                sc.nextLine();
-                isChecked = false;
-            }
-        }
+        // while (cantidad < 0 || cantidad > 5) {
+        //     System.out.println("Introduce un numero entero");
+        //     try {
+        //         cantidad = sc.nextInt();
+        //     } catch (InputMismatchException m) {
+        //         System.out.println("Caracter no válido");
+        //         sc.nextLine();
+        //         isChecked = false;
+        //     }
+        // }
         return cantidad;
     }
 
